@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Square</title>
+</head>
+<body>
+Enter number<input type="text" id="number">
+<input type="button" onclick="getSquare(number);" value="Get Square"/>
+<script type="text/javascript">
+ function getSquare(number)
+ {
+	 try
+	 {
+		 return number.value*numer.value;
+	 }
+	 catch(error)
+	 {
+		 document.write("Error : "+error.message + "<br>");
+	 }
+	 finally
+	 {
+		 document.write("finally block;")
+	 }
+ }
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Phone</title>
+</head>
+<body>
+<h2>Phones Inheritance </h2>
+<script type="text/javascript">
+function phone()
+{
+	this.call = function call(contact)
+	{
+		document.write("Calling "+ contact+ "<br>");
+		alert("in phone call method");
+	};
+	
+	this.message = function message(contact, text)
+	{
+		document.write("Message '"+ text+"' sent to "+contact+ "<br>");
+		alert("in phone message method");
+	};
+	this.contacts =[' Parth' ,'Shrey', 'Maitray' ,'Salman', 'Karan'];
+}
+
+function smartPhone()
+{
+	this.email = function email(contact)
+	{
+		document.write("Email sent to "+ contact+ "<br>");
+		alert("in email method");
+	};
+	
+	this.game = function game()
+	{
+		document.write("Game started <br>");
+		alert("in game method");
+	};
+}
+smartPhone.prototype.message = function message(contact, multimedia)
+{
+	document.write("Multimedia message'"+ multimedia+"' sent to "+contact+ "<br>");
+	alert("in smartPhone message method");
+}
+smartPhone.prototype = new phone();
+var iphone = new smartPhone();
+iphone.email("parthmukesh.upadhyay@sjsu.edu");
+iphone.game();
+iphone.call(iphone.contacts[1]);
+iphone.message(iphone.contacts[2],"Image.bmp");
+</script>
+</body>
+</html>

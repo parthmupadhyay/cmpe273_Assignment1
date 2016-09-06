@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Credit Card</title>
+</head>
+<body>
+<h2>Credit Card Check</h2>
+Enter Credit card number:<input type="text" id="cardNumber" maxlength="19" />
+<input type="button" value="Check" onclick="creditCardCheck(cardNumber);"/><br>
+<p id="result"></p>
+<script type="text/javascript">
+var visaRegex= new RegExp("^4[0-9]{12}(?:[0-9]{3})?$","g");
+var masterRegex= new RegExp("^5[1-5][0-9]{14}$","g");
+var amexRegex= new RegExp("^3[47][0-9]{13}$","g");
+
+function creditCardCheck(cardnumber)
+{
+	if(visaRegex.test(cardnumber.value))
+	{
+		document.getElementById("result").innerHTML="Visa Card";
+	}
+	else if(masterRegex.test(cardnumber.value))
+	{
+		document.getElementById("result").innerHTML="Master Card";
+	}
+	else if(amexRegex.test(cardnumber.value))
+	{
+		document.getElementById("result").innerHTML="Amex Card";
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Mobile</title>
+</head>
+<body>
+<script type="text/javascript">
+var jsonText='{"products":['+
+             '{"name":"Iphone","version":"6s","company":"Apple"},'+
+             '{"name":"Moto","version":"G4 Plus","company":"Lenovo"},'+
+             '{"name":"Nexus","version":"6P","company":"Google"}]}';
+jsonObject=JSON.parse(jsonText);
+document.write(jsonObject.products[1].company+" "+ jsonObject.products[1].name + " "+jsonObject.products[1].version);
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Simple Interest Calculation</title>
+</head>
+<body>
+<p>Enter Principal amount, rate of interest and period
+<form>
+Principal Amount:<input type="text" id="principalAmount" ><br>
+Rate of interest:<input type="text" id="rate"><br>
+Period:<input type="text" id="period"><br>
+<input type="button" id="submitButton" value="Calculate Simple interest" />
+</form>
+<p id="simpleInterest">Simple Interest: ?</p>
+<script type="text/javascript">
+var button = document.getElementById("submitButton");
+button.onclick = function()
+{
+var pamount = document.getElementById("principalAmount").value;
+var rate = document.getElementById("rate").value;
+var period = document.getElementById("period").value;
+var simpleInterest = (pamount * rate * period)/100;
+var result = "Simple Interest :" + simpleInterest;
+document.getElementById("simpleInterest").innerHTML = result;
+};
+</script>
+</body>
+</html>

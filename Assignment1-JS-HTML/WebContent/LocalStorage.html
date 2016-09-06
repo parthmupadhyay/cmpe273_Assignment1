@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Use detail</title>
+</head>
+<body>
+Enter full name :<input type="text" id="fullname"/><br>
+Enter email id :<input type="text" id="email"/><br>
+<input type="button" name="addButton" value="Add" onclick="addToLocalStorage(fullname,email);"/>
+<input type="button" name="dispButton" value="Display Local Storage content" onclick="displayLocalStorage();"/>
+<p id=result></p>
+<script type="text/javascript">
+function addToLocalStorage(name,email)
+{
+	var fullname=name.value;
+	var emailid=email.value;
+	localStorage.setItem(fullname,emailid);
+	alert("Added");
+}
+
+function displayLocalStorage()
+{
+	var string="",i=0,key="";
+	for(i=0;i<localStorage.length;i++)
+	{
+		var key=localStorage.key(i);
+		var value=localStorage.getItem(key);
+		string +=" Name: "+key+ " ,Email id: "+value+"<br>";
+	}
+	document.getElementById("result").innerHTML=string;
+}
+</script>
+</body>
+</html>

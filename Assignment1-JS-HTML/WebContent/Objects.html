@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Product Details</title>
+</head>
+<body>
+<form>
+<select id="product">
+<option value="iphone">iPhone 6s</option>
+<option value="nexus">Nexus 6p</option>
+</select>
+<input type="button" value="Go" id="button"/>
+</form>
+<p id="detail"></p>
+<script type="text/javascript">
+var button = document.getElementById("button");
+button.onclick = function()
+{
+	alert("in function details");
+	var product = document.getElementById("product").value;
+	if(iphone.name.toLowerCase()==product)
+		{
+			var detail = "Product Name : "+ iphone.fullname() + " , Price : " +iphone.price;
+			document.getElementById("detail").innerHTML = detail;
+		}
+	if(nexus.name.toLowerCase()==product)
+	{
+		var detail = "Product Name : "+ nexus.fullname() + " , Price : " +nexus.price;
+		document.getElementById("detail").innerHTML = detail;
+	}
+}
+var iphone = 
+{
+	name : "iPhone",
+	version : "6s",
+	price : 750,
+	company : "Apple",
+	fullname : function(){
+		return this.company + " " + this.name + " " + this.version;
+	}
+};
+
+var nexus = 
+{
+	name : "Nexus",
+	version : "6P",
+	price : 500,
+	company : "Google",
+	fullname : function(){
+		return this.company + " " + this.name + " " + this.version;
+	}
+};
+
+</script>
+</body>
+</html>

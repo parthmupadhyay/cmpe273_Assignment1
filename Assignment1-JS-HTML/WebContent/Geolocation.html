@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Directions to MLK Library</title>
+</head>
+<body>
+<h2>Directions to Dr. Martin Luther King Library</h2>
+<input type="button" value="Get Directions" onclick="getDirections();"/>
+<p id="result"></p>
+<script type="text/javascript">
+var result=document.getElementById("result");
+function getDirections()
+{
+	if (!navigator.geolocation){
+	    result.innerHTML = "Geolocation is not supported by your browser";
+	    return;
+	  }
+	var location = navigator.geolocation.getCurrentPosition(currentLocation,error);
+	
+}
+
+function currentLocation(location)
+{
+	var latitude=location.coords.latitude;
+	var longitude=location.coords.longitude;
+	var result = "https://www.google.com/maps/dir/"+latitude+","+longitude+"/37.335406,-121.884849";
+	 window.location.href = result;
+}
+
+function error()
+{
+	document.getElementById("result").innerHTML= "Cannot retrieve location";
+}
+</script>
+</body>
+</html>

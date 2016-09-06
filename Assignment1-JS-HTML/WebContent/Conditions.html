@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Bank Account</title>
+</head>
+<body>
+<h2>Bank Transactions</h2>
+Enter amount to withdraw<input type="text" id="withdrawAmount" /> 
+<input type="button" id="withdrawButton"  value="Withdraw" onclick="withdraw(withdrawAmount);"/><br><br>
+Enter amount to deposit<input type="text" id="depositAmount" />
+<input type="button" id="depositButton" value="Deposit" onclick="deposit(depositAmount);"/><br><br>
+<input type="button" id="balanceButton" value="Check Balance" onclick="checkBalance();"/><br><br>
+<p id="result"></p>
+<script type="text/javascript">
+var balance=500;
+var result=document.getElementById("result");
+function withdraw(amount)
+{
+	
+	var amt=amount.value;
+	alert("in withdraw function");
+	if(balance<=500)
+	{
+		result.innerHTML="Cannot withdraw "+ amt+" , Minimum 500 balance required";
+	}
+	if(balance>500)
+	{
+		if(balance-amt<500)
+		{
+			result.innerHTML= "Cannot withdraw "+ amt+" , Minimum 500 balance required";
+		}
+		else
+		{
+			balance=parseInt(balance)-parseInt(amt);
+			result.innerHTML= "Amount "+amt+" withdrawn";
+		}
+	}
+}
+
+function deposit(amount)
+{
+	balance=parseInt(balance) + parseInt(amount.value);
+	result.innerHTML= amount.value +" deposited to account";
+}
+
+function checkBalance()
+{
+	result.innerHTML= "Balance :" + balance;
+}
+</script>
+</body>
+</html>
