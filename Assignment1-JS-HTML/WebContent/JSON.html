@@ -11,7 +11,9 @@ var jsonText='{"products":['+
              '{"name":"Moto","version":"G4 Plus","company":"Lenovo"},'+
              '{"name":"Nexus","version":"6P","company":"Google"}]}';
 jsonObject=JSON.parse(jsonText);
-document.write(jsonObject.products[1].company+" "+ jsonObject.products[1].name + " "+jsonObject.products[1].version);
+document.write(jsonObject.products[0].company+" "+ jsonObject.products[0].name + " "+jsonObject.products[0].version+"<br>");
+document.write(jsonObject.products[1].company+" "+ jsonObject.products[1].name + " "+jsonObject.products[1].version+"<br>");
+document.write(jsonObject.products[2].company+" "+ jsonObject.products[2].name + " "+jsonObject.products[2].version);
 </script>
 </body>
 </html>
