@@ -1,13 +1,13 @@
 package cmpe273.assignment1.queue;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class CarMain {
 
 	public static void main(String[] args) 
 	{
-		List<String> queue = new ArrayList<String>();
+		Queue<String> queue = new LinkedList<String>();
 		CarWasher carWasher = new CarWasher(queue);
 		carWasher.addCarToQueue("Honda City");
 		carWasher.addCarToQueue("Toyota Prius");

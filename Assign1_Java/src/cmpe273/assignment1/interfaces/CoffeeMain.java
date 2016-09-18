@@ -21,21 +21,20 @@ public class CoffeeMain
 		{
 			System.out.println(product);
 		}
-		System.out.println("Exit");
 		boolean flag=true;
+		Scanner scanner1 = new Scanner(System.in);
 		do
 		{
 			System.out.println("Choose options:\n 1.Select Coffee \n 2.Checkout \n 3.Exit");
-			Scanner scanner1 = new Scanner(System.in);
-			Scanner scanner2 = new Scanner(System.in);
 			int choice=scanner1.nextInt();
+			scanner1.nextLine();
 			
 			switch(choice)
 			{
 				case 1:
 				{
 					System.out.println("Enter Product name");
-					String name=scanner2.nextLine();
+					String name=scanner1.nextLine();
 					if(!products.contains(name.toUpperCase()))
 					{
 						System.out.println("Please enter valid choice");
@@ -57,7 +56,8 @@ public class CoffeeMain
 					}
 					System.out.println("Total Cost:"+machine.getTotalCost());
 					System.out.println("Enter money");
-					double money=scanner2.nextDouble();
+					double money=scanner1.nextDouble();
+					scanner1.nextLine();
 					machine.insertMoney(money);
 					machine.checkout();
 					machine.collectItem();
@@ -75,9 +75,9 @@ public class CoffeeMain
 					break;
 				}
 			}
-			scanner1.close();
-			scanner2.close();
+			
 		}while(flag);
+		scanner1.close();
 	}
 
 }

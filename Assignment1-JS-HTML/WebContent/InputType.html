@@ -6,42 +6,28 @@
 </head>
 <body>
 <h2>Sign Up Page</h2>
-<form onsubmit="submitData(this);">
+<form name="form" id="form">
 <table>
 <tr>
 <td>Enter Full name:</td>
-<td><input type="text" name="fullname" id="fullname" placeholder="Enter Full name" autofocus></td>
+<td><input type="text" name="fullname" id="fullname" placeholder="Enter Full name" autofocus required></td>
 </tr>
 <tr>
 <td>Enter Email id: </td>
-<td><input type="email" name="emailid" id="emailid" placeholder="Enter email addresses separated by comma" required multiple></td>
+<td><input type="email" name="emailid" id="emailid" placeholder="Enter email addresses separated by comma" required></td>
 </tr>
 <tr>
 <td>Enter Password </td>
-<td><input type="password" name="pwd" id="pwd" placeholder="Enter Password" required></td>
+<td><input type="password" name="pwd" id="pwd" placeholder="Enter Password" required="required"></td>
 </tr>
 <tr>
 <td>Enter Phone number </td>
 <td><input type="text" name="phone" id="phone" placeholder="Enter Phone" pattern="[0-9]{10}" required></td>
 </tr>
 <tr>
-<td><input type="submit" value="Submit" /></td>
+<td><button value="Submit">Click Here </button></td>
 </tr>
 </table>
 </form>
-<script type="text/javascript">
-function submitData(data)
-{
-	var fullname=data.fullname.value;
-	var emailid=data.emailid.value;
-	var phone=data.phone.value;
-	
-	document.write("Data Submitted<br>");
-	document.write("Name:"+fullname+"<br>");
-	document.write("Email id:"+emailid+"<br>");
-	document.write("Phone:"+phone+"<br>");
-	
-}
-</script>
 </body>
 </html>

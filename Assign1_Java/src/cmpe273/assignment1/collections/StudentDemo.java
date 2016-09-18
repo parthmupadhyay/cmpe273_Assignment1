@@ -8,6 +8,8 @@ public class StudentDemo
 	{
 		StudentRecord record = new StudentRecord();
 		boolean flag=true;
+		Scanner scanner = new Scanner(System.in);
+		Scanner scanner2 = new Scanner(System.in);
 		do
 		{	
 			System.out.println("Choose from below");
@@ -17,8 +19,7 @@ public class StudentDemo
 			System.out.println("4.View courses enrolled");
 			System.out.println("5.Show all students enrollment");
 			System.out.println("6.Exit");
-			Scanner scanner = new Scanner(System.in);
-			Scanner scanner2 = new Scanner(System.in);
+			
 			int choice=scanner.nextInt();
 			switch(choice)
 			{
@@ -28,6 +29,7 @@ public class StudentDemo
 					String name=scanner2.nextLine();
 					System.out.println("Enter student id");
 					long id=scanner2.nextLong();
+					scanner2.nextLine();
 					StudentEnrollment newStudent= new StudentEnrollment(name);
 					record.setStudentEnrollmentDetails(id, newStudent);
 					break;
@@ -58,6 +60,7 @@ public class StudentDemo
 				{
 					System.out.println("Enter student id");
 					long id= scanner2.nextLong();
+					scanner2.nextLine();
 					StudentEnrollment enrollment=record.getStudentEnrollmentDetails(id);
 					System.out.println(enrollment.toString());
 					break;
@@ -78,8 +81,9 @@ public class StudentDemo
 					break;
 				}
 			}
-			scanner.close();
-			scanner2.close();
+			
 		}while(flag);
+		scanner.close();
+		scanner2.close();
 	}
 }

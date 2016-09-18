@@ -2,8 +2,9 @@ package cmpe273.assignment1.queue;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
+
+import java.util.Queue;
 
 import org.junit.*;
 
@@ -12,7 +13,7 @@ public class TestCarWasher
 	@Test
 	public void testAddCarToQueue()
 	{
-		List<String> testQueue= new ArrayList<String>();
+		Queue<String> testQueue= new LinkedList<String>();
 		CarWasher washerTest=new CarWasher(testQueue);
 		String testCar="Nissan Micra";
 		washerTest.addCarToQueue(testCar);
@@ -22,7 +23,7 @@ public class TestCarWasher
 	@Test
 	public void testExitCarQueue()
 	{
-		List<String> testQueue= new ArrayList<String>();
+		Queue<String> testQueue= new LinkedList<String>();
 		CarWasher washerTest=new CarWasher(testQueue);
 		String testCar1="Nissan Micra";
 		String testCar2="Toyota Prius";

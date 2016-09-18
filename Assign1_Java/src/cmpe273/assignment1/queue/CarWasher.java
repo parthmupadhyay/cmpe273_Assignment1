@@ -1,11 +1,11 @@
 package cmpe273.assignment1.queue;
 
-import java.util.List;
+import java.util.Queue;
 
 public class CarWasher 
 {
-	private List<String> carQueue;
-	CarWasher(List<String> carQueue)
+	private Queue<String> carQueue;
+	CarWasher(Queue<String> carQueue)
 	{
 		this.carQueue= carQueue;
 	}
@@ -18,14 +18,14 @@ public class CarWasher
 	
 	public void wash()
 	{
-		Object car=this.carQueue.get(0);
+		Object car=this.carQueue.peek();
 		System.out.println("Washing car"+car.toString());
 	}
 
 	public String exitCarQueue()
 	{
-		System.out.println(this.carQueue.get(0)+" is exiting carwash");
-		return this.carQueue.remove(0);
+		System.out.println(this.carQueue.peek()+" is exiting carwash");
+		return this.carQueue.remove();
 	}
 	
 	public int getQueueLength()
